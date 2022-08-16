@@ -3,8 +3,14 @@ import './App.css';
 import Sample from './Container/Sample/Sample';
 import { faker } from '@faker-js/faker';
 import Approval_card from "./Component/Approval_card"
+import Class_Component from './Container/Sample/Class_Component/Class_Component';
+import UseCallback from './Container/Sample/UseCallBack/UseCallback';
 
 function App() {
+  window.navigator.geolocation.getCurrentPosition(
+    (position) => console.log(position),
+    (err) => console.log(err)
+  )
   return (
     <div className='App'>
       <div>
@@ -18,6 +24,8 @@ function App() {
       <Approval_card>
         <Sample author="Alex" time="Yesterday at 4:30pm" faker={faker.image.avatar()} />
       </Approval_card>
+      <Class_Component />
+      <UseCallback />
     </div>
   );
 }
